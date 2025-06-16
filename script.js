@@ -66,6 +66,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const original = mathInput.value.trim('');
         const theme = themeSelect.value;
 
+        // disable all controls to stop any re submit while rewriting
+        mathInput.disabled = true;
+        themeSelect.disabled = true;
+        rewriteBtn.disabled = true;
+        copyBtn.disabled = true;
+        tryAgainBtn.disabled = true;
+
         // display the output container,and loading container
         outputContainer.style.display= 'block';
         loadingContainer.classList.remove('hidden');
@@ -95,6 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // inject rewritten text
         rewrittenText.textContent = rewritten;
+
+        // re-enable controls
+        mathInput.disabled = false;
+        themeSelect.disabled = false;
+        copyBtn.disabled = false;
+        tryAgainBtn.disabled = false;
+        validateInputs();
 
         // show toast success message
         if (rewritten.startsWith('⚠️')) {

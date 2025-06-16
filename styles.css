@@ -74,7 +74,7 @@ body {
 /* Header styles */
 header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .title {
@@ -583,6 +583,7 @@ main {
 .result-header {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .result-header i {
@@ -741,7 +742,7 @@ main {
 /* Footer styles */
 footer {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
     color: #718096;
     font-size: 0.95rem;
 }
@@ -1181,14 +1182,160 @@ footer {
 }
 
 /* Media query */
-@media (max-width: 768px) {
-    .title {
-        font-size: 4rem;
-    }
+@media (max-width: 1024px) {
+   header {
+    margin-bottom: 2.5rem;
+  }
+
+  .input-container,
+  .output-container {
+    max-width: 90%;
+    padding: 2rem;
+  }
+
+  .results {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+   footer {
+    margin-top: 2.5rem;
+  }
+
+  .footer-main {
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 768px) {
-    .subtitle {
-        font-size: 1.875rem;
-    }
+  .title {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    max-width: 90%;
+  }
+
+  .input-container,
+  .output-container {
+    padding: 1.5rem;
+  }
+
+  .input-group textarea {
+    width: 94%;
+  }
+
+  .loading-container {
+    padding: 1rem 0;
+  }
+
+  .loading-content {
+    margin-top: 1rem;
+  }
+
+  .result-box {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    margin-bottom: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .input-container,
+  .output-container {
+    max-width: 80%;
+  }
+  
+  .input-group textarea {
+    width: 85%;
+    padding: 0.75rem 1rem;
+  }
+
+  .input-group label,
+  .result-header h2 {
+    font-size: 1rem;
+  }
+  
+  .input-group input, .input-group select {
+    font-size: 0.9rem;
+  }
+
+  .rewrite-btn {
+    font-size: 1rem;
+  }
+
+  .loading-title {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+
+  .loading-description {
+    color: #6b7280;
+    max-width: 20rem;
+    line-height: 1.75;
+  }
+
+  .results {
+    margin-bottom: 1rem;
+  }
+
+  .result-text {
+    padding: 1rem;
+  }
+
+  .result-box.original {
+    width: initial;
+  }
+
+  .result-box.original .result-header,
+  .result-box.rewritten .result-header {
+    padding: 0.8rem;
+  }
+
+  .result-box.original h2 ,
+  .result-box.rewritten h2 {
+    font-size: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  .action-btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .toast {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  footer {
+    margin-top: 1.5rem;
+  }
+
+  .footer-main {
+    margin-top: 0;
+  }
 }
